@@ -1,0 +1,60 @@
+<main>
+    <div class="welcome-page" style="background-image: url('/images/welcome.svg');">
+        <p class="site-desc">First i need your hand, then forever can begin.</p>
+        <script>
+            const headerHeight = document.querySelector('.header-core').offsetHeight;
+            const welcomePage = document.querySelector('.welcome-page');
+            welcomePage.style.height = `calc(100vh - ${headerHeight}px)`;
+        </script>
+    </div>
+    <ul class="post-list">
+        <%_ page.posts.forEach (post => { -%>
+        <li class="post-item">
+            <section>
+                <h1 class="post-title">
+                    <%_ post.title == '' ? post_title = 'undefined' : post_title = post.title -%>
+                    <a class="overflow-hidden" title="<%= post_title %>" href="<%= url_for(post.path) %>"><%= post_title %></a>
+                </h1>
+            </section>
+            <svg class="icon post-top" aria-hidden="true">
+                <use xlink:href="#icon-star"></use>
+            </svg>
+            <%_ post.excerpt ? excerpt = post.excerpt : excerpt = post.content -%>
+            <p class="post-excerpt"><%= truncate(strip_html(excerpt),{length: 128}).replace(/\n|\r/g,"") %></p>
+            <div class="post-info">
+                <div class="date">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-riqi1"></use>
+                    </svg>
+                    <time datetime="<%= post.date %>"><%= date(post.date) %></time>
+                </div>
+                <%_ if (post.categories.length > 0) { -%>
+                <%_ category = post.categories.data -%>
+                <%_ category = category[category.length - 1] -%>
+                <div class="categories element">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-fenlei"></use>
+                    </svg>
+                    <a href="<%= url_for(category.path) %>"><%= category.name %></a>
+                </div>
+                <%_ } -%>
+                <%_ if ( post.tags.length > 0) { -%>
+                <div class="tags element element-ipad">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-biaoqian"></use>
+                    </svg>
+                    <%_ post.tags.forEach (tag => { -%>
+                    <a href="<%= url_for(tag.path) %>"><%= tag.name %></a>
+                    <%_ }) -%>
+                </div>
+                <%_ } -%>
+                <div class="read-more">
+                    <a href="<%= url_for(post.path) %>">Read more</a>
+                </div>
+            </div>
+        </li>
+        <%_ }) -%>
+    </ul>
+</main>
+<script src="/iconfont/iconfont.js"></script>
+<script src="/js/canvas-ribbon.js" id="ribbon" alpha="0.6" size="150" zIndex="-1"></script>

@@ -1,0 +1,312 @@
+.markdown {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    line-height: 1.5;
+}
+
+/* 标题 <h1>,<h2>,<h3>,<h4>,<h5>,<h6> */
+.markdown h1,.markdown h2,.markdown h3,.markdown h4,.markdown h5,.markdown h6 {
+    color: #333;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+.markdown h1 {
+    padding-bottom: 0.3em;
+    font-size: 2em;
+    border-bottom: 1px solid hsl(210deg 18% 87%);
+}
+.markdown h2 {
+    padding-bottom: .3em;
+    font-size: 1.5em;
+    border-bottom: 1px solid hsl(210deg 18% 87%);
+}
+.markdown h3 {
+    font-size: 1.25em;
+}
+.markdown h4 {
+    font-size: 1em;
+}
+.markdown h5 {
+    font-size: .875em;
+}
+.markdown h6 {
+    color: #57606a;
+    font-size: .85em;
+}
+
+/* 段落 <p> */
+.markdown p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+/* 链接 <a> */
+.markdown a {
+    color: #3371e3;
+    text-decoration: none;
+    word-break: break-all;
+}
+.markdown a:hover {
+    text-decoration: underline;
+}
+
+/* 图片 <img> */
+.markdown img {
+    width: 100%;
+    border-radius: 0.25em;
+}
+
+/* 分割线 <hr> */
+.markdown hr {
+    margin: 1.5em 0;
+    padding: 0;
+    height: .25em;
+    border: 0;
+    border-style: none;
+    overflow: hidden;
+    background: #d0d7de;
+}
+
+/* 有序/无序/任务列表 <ol>,<ul>,<li>,<input> */
+.markdown ol,
+.markdown ul {
+    padding-left: 2em;
+    margin-bottom: 1em;
+}
+.markdown li+li {
+    margin-top: 1em;
+}
+li:has( > input[type="checkbox"]) {
+    list-style: none;
+    margin-left: -1.25em;
+}
+
+/* 引用 <blockquote> */
+.markdown blockquote {
+    background: #fff;
+    margin-bottom: 1em;
+    padding: 1em 0.5em 0.5em 1em;
+    border-style: solid;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-left-color: #428bca;
+    border-left-width: calc(max(.5em,4px));
+    border-radius: calc(max(.5em,4px));
+    overflow: auto;
+}
+.markdown blockquote p {
+    word-wrap: break-word;
+}
+.markdown blockquote * {
+    margin-bottom: 0.5em;
+}
+
+/* 表格框 <table> */
+.markdown table {
+    display: block;
+    margin-bottom: 1em;
+    width: 100%;
+    width: max-content;
+    max-width: 100%;
+    overflow: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.markdown table th,
+.markdown table tr,
+.markdown table td {
+    background-color: #fff;
+    padding: 6px 13px;
+    border: 1px solid #d0d7de;
+    text-align: left;
+}
+.markdown table th,
+.markdown table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+.markdown table th,
+.markdown table td {
+    white-space: nowrap;
+}
+
+/* 代码框 <figure> */
+:root {
+    --color-Alto: #d4d4d4; /* 中音 */
+    --color-Anakiwa: #9cdcfe; /* 穴木轮 */
+    --color-Asparagus: #6a9955;  /* 芦笋 */
+    --color-Coriander: #b5cea8; /* 香菜 */
+    --color-Gray: #858585; /* 灰色的 */
+    --color-Havelock-Blue: #569cd6; /* 哈夫洛克蓝 */
+    --color-My-Pink: #ce9178; /* 我的粉红 */
+    --color-Sapling: #dcdcaa; /* 树苗 */
+    --color-Silver: #c6c6c6; /* 银白 */
+    --color-Viola: #c586c0; /* 中提琴 */
+    --color-Medium-Purple: #8250df; /* 中紫色 */
+    --color-Cod-Gray: #1e1e1e; /* 鳕鱼灰 */
+    --color-Straw: #d7ba7d; /* 稻草 */
+}
+.markdown figure[class~="highlight"] > table {
+    margin: 0;
+    padding: 0;
+}
+.markdown figure[class~="highlight"] > table th,
+.markdown figure[class~="highlight"] > table tr,
+.markdown figure[class~="highlight"] > table td {
+    padding: 6px 13px;
+    padding: 0.75em;
+    padding-right: 0;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+/* .markdown figure[class~="highlight"] table::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.markdown figure[class~="highlight"] table::-webkit-scrollbar-track {
+    background-color: #1e1e1e;
+}
+.markdown figure[class~="highlight"] table::-webkit-scrollbar-thumb {
+    background-color: #858585;
+} */
+
+.markdown code {
+    color: #8250df;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+.markdown > pre {
+    padding: 1em !important;
+}
+.markdown > pre,
+.markdown figure[class~="highlight"] {
+    background: #1e1e1e;
+    border-radius: 0.25em;
+    padding: .25em;
+    margin-bottom: 1em;
+    overflow: auto;
+}
+.markdown > pre code,
+.markdown figure[class~="highlight"] code,
+.markdown figure[class~="highlight"] pre {
+    color: #d4d4d4;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    font-size: 85%;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.45;
+    tab-size: 4;
+    hyphens: none;
+}
+.markdown figure[class~="highlight"] .gutter pre {
+    color: #858585;
+}
+
+.highlight .comment {color: #6a9955;} /* 注释 */
+.highlight .built_in {color: #dcdcaa;} /* 内置 */
+.highlight .string {color: #ce9178;} /* 字符 */
+.highlight.number {color: #b5cea8;} /* 数字 */
+
+/* 元数据 */
+.highlight.bash .meta,
+.highlight.html .meta,
+.highlight.sh .meta {
+    color: #6a9955;
+}
+.highlight.c .meta {
+    color: #c586c0;
+}
+
+/* 关键字 */
+.highlight.c .keyword,
+.highlight.bash .keyword,
+.highlight.sh .keyword,
+.highlight.python .keyword {
+    color: #c586c0;
+}
+.highlight.sql .keyword,
+.highlight.js .keyword {
+    color: #569cd6;
+}
+
+/* 属性 */
+.highlight.html .attr,
+.highlight.yaml .attr,
+.highlight.yml .attr {
+    color: #569cd6;
+}
+
+/* 函数标题 */
+.highlight.bash .title,
+.highlight.sh .title,
+.highlight.c .title.function_,
+.highlight.js .title.function_ {
+    color: #dcdcaa;
+}
+
+.highlight.c .type,
+.highlight.html .name {
+    color: #569cd6;
+}
+
+.highlight.bash .variable,
+.highlight.sh .variable {
+    color: #9cdcfe;
+}
+
+.highlight.python .code pre {
+    color: #9cdcfe !important;
+}
+
+.highlight.css .attribute,
+.highlight.css .selector-attr,
+.highlight.js .variable.language_,
+.highlight.js .property {
+    color: #9cdcfe;
+}
+
+.highlight.css .selector-class,
+.highlight.css .selector-tag {
+    color: #d7ba7d;
+}
+
+.highlight.c .params {
+    color: #ffd700;
+}
+
+.highlight.js .title.class_ {
+    color: #4ec9b0;
+}
+
+/* 标题链接锚点 <h1><a></h1> */
+.markdown :is(h1,h2,h3,h4,h5,h6) {
+    position: relative;
+}
+.markdown :is(h1,h2,h3,h4,h5,h6) a {
+    color: rgba(0, 0, 0, 0);
+    font-family: "iconfont" !important;
+    font-size: 1rem;
+    position: absolute;
+    margin-left: -1.25em;
+    transition: color 0s linear;
+}
+.markdown :is(h1,h2,h3,h4,h5,h6) a:before {
+    content: "\e629";
+}
+.markdown :is(h1,h2,h3,h4,h5,h6):hover a,
+.markdown :is(h1,h2,h3,h4,h5,h6) a:hover {
+    color: #515151;
+}
+.markdown h1 a {margin-top: .75em;}
+.markdown h2 a {margin-top: .50em;}
+.markdown h3 a {margin-top: .25em;}
+.markdown h4 a {margin-top: .125em;}
+.markdown h5 a {margin-top: 0;}
+.markdown h6 a {margin-top: 0;}

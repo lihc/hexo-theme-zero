@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+/* <a> 标签格式化 */
+a {
+    color: #0969da;
+    text-decoration: none;
+}
+
+/* IconFont 图标库 */
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+/* 文本元素溢出隐藏 */
+.overflow-hidden {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 主题通用边框 */
+.std-border {
+    border: 1px solid #d0d7de;
+}
+
+/* 媒体查询 */
+/* 在电脑浏览器全屏下显示 */
+@media screen and (min-width: 1024px) {
+    .element {
+        display: block;
+    }
+}
+
+/* 在手机上隐藏 */
+@media screen and (max-width: 767px) {
+    .element {
+        display: none;
+    }
+}
+
+/* 在竖屏pad设备上隐藏 */
+@media screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+    .element-ipad {
+        display: none;
+    }
+}
+
+/* 在横屏pad设备上显示 */
+@media screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+    .element-ipad {
+        display: block;
+    }
+}
+
+@keyframes main-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-3em);
+    }
+    to {
+        opacity: 1;
+    }
+}
