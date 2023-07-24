@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6978113",
+      "name": "链接",
+      "font_class": "lianjie",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "1793595",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "20812976",
+      "name": "菜单-4",
+      "font_class": "caidan-4",
+      "unicode": "e7c0",
+      "unicode_decimal": 59328
+    },
+    {
+      "icon_id": "36502304",
+      "name": "分类",
+      "font_class": "categories",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
       "icon_id": "2529632",
       "name": "置顶推荐top",
       "font_class": "star",

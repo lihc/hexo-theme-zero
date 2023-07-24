@@ -286,7 +286,7 @@ li:has( > input[type="checkbox"]) {
 }
 
 /* 标题链接锚点 <h1><a></h1> */
-.markdown :is(h1,h2,h3,h4,h5,h6) {
+/* .markdown :is(h1,h2,h3,h4,h5,h6) {
     position: relative;
 }
 .markdown :is(h1,h2,h3,h4,h5,h6) a {
@@ -296,17 +296,36 @@ li:has( > input[type="checkbox"]) {
     position: absolute;
     margin-left: -1.25em;
     transition: color 0s linear;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-color: pink;
+    position: relative;
+    top: 50%;
+    transform: translate(-2rem, -50%);
 }
-.markdown :is(h1,h2,h3,h4,h5,h6) a:before {
-    content: "\e629";
-}
+
 .markdown :is(h1,h2,h3,h4,h5,h6):hover a,
 .markdown :is(h1,h2,h3,h4,h5,h6) a:hover {
     color: #515151;
 }
-.markdown h1 a {margin-top: .75em;}
-.markdown h2 a {margin-top: .50em;}
-.markdown h3 a {margin-top: .25em;}
-.markdown h4 a {margin-top: .125em;}
-.markdown h5 a {margin-top: 0;}
-.markdown h6 a {margin-top: 0;}
+*/
+
+
+.markdown :is(h1,h2,h3,h4,h5,h6) {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.markdown :is(h1,h2,h3,h4,h5,h6) a {
+    display: inline-block;
+    height: 1rem;
+    width: .5rem;
+    background-color: pink;
+    position: absolute;
+    margin-left: -0.75rem;
+}
+.markdown :is(h1,h2,h3,h4,h5,h6) a:before {
+    content: "\e629";
+}
