@@ -9,8 +9,8 @@
 /* 标题 <h1>,<h2>,<h3>,<h4>,<h5>,<h6> */
 .markdown h1,.markdown h2,.markdown h3,.markdown h4,.markdown h5,.markdown h6 {
     color: #333;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
     font-weight: 600;
     line-height: 1.25;
 }
@@ -48,6 +48,7 @@
 .markdown a {
     color: #3371e3;
     text-decoration: none;
+    word-break: break-all;
 }
 .markdown a:hover {
     text-decoration: underline;
@@ -194,12 +195,13 @@ li:has( > input[type="checkbox"]) {
     color: #d4d4d4;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: 1em;
+    font-size: 0.875rem;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
-    line-height: 1.5;
+    line-height: 1.45;
     tab-size: 4;
     hyphens: none;
 }
