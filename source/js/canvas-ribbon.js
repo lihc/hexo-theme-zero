@@ -37,7 +37,7 @@
   g2d.globalAlpha = config.a;
   canvas.style.cssText = 'opacity: ' + config.a + ';position:fixed;top:0;left:0;z-index: ' + config.z + ';width:100%;height:100%;pointer-events:none;';
   // create canvas
-  document.getElementsByTagName('body')[0].appendChild(canvas);
+  document.getElementsByTagName('html')[0].appendChild(canvas);
 
   function redraw() {
     g2d.clearRect(0, 0, width, height);
